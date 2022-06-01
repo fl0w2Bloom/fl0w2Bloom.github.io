@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Instant-ngp | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Instant-ngp 需要的环境  VS2019 or GCC&#x2F;G++ 7.5 or higher CUDA v10.2 or higher  CMake 3.21 or higher   编译12$ git clone --recursive https:&#x2F;&#x2F;github.com&#x2F;nvlabs&#x2F;instant-ngp$ cd instant-ngp  点击windows 输入dev">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Instant-ngp">
+<meta property="og:url" content="http://example.com/2022/06/01/Instant-ngp/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Instant-ngp 需要的环境  VS2019 or GCC&#x2F;G++ 7.5 or higher CUDA v10.2 or higher  CMake 3.21 or higher   编译12$ git clone --recursive https:&#x2F;&#x2F;github.com&#x2F;nvlabs&#x2F;instant-ngp$ cd instant-ngp  点击windows 输入dev">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-06-01T13:37:23.000Z">
+<meta property="article:modified_time" content="2022-06-01T13:37:48.487Z">
+<meta property="article:author" content="Caesar Xu">
+<meta property="article:tag" content="Instanct-ngp">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Instant-ngp" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/06/01/Instant-ngp/" class="article-date">
+  <time class="dt-published" datetime="2022-06-01T13:37:23.000Z" itemprop="datePublished">2022-06-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Instant-ngp
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a href="">Instant-ngp</a></p>
+<h2 id="需要的环境"><a href="#需要的环境" class="headerlink" title="需要的环境"></a>需要的环境</h2><blockquote>
+<ul>
+<li>VS2019 or GCC&#x2F;G++ 7.5 or higher</li>
+<li>CUDA v10.2 or higher </li>
+<li>CMake 3.21 or higher</li>
+</ul>
+</blockquote>
+<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> --recursive https://github.com/nvlabs/instant-ngp</span><br><span class="line">$ <span class="built_in">cd</span> instant-ngp</span><br></pre></td></tr></table></figure>
+
+<p>点击windows 输入dev 选择<code>Developer Command Prompt for VS 2019</code>,输入以下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">instant-ngp$ cmake . -B build</span><br><span class="line"></span><br><span class="line">instant-ngp$ cmake --build build --config RelWithDebInfo -j 16 </span><br><span class="line"><span class="comment"># 或者直接进build文件夹，用VS打开instant-ngp.sln文件</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">instant-ngp$ ./build/testbed --SCENE data/nerf/fox</span><br></pre></td></tr></table></figure>
+
+<p>如果输出正常，则成功！！！！！！！！！！！！！！！！</p>
+<h1 id="新建数据集"><a href="#新建数据集" class="headerlink" title="新建数据集"></a>新建数据集</h1><blockquote>
+<p>1、准备图片，进入该文件夹</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;requirements.txt</span><br><span class="line">&gt;commentjson~=0.9.0</span><br><span class="line">&gt;imageio~=2.16.0</span><br><span class="line">&gt;numpy~=1.21.2</span><br><span class="line">&gt;pybind11~=2.7.1</span><br><span class="line">&gt;scipy~=1.7.1</span><br><span class="line">&gt;tqdm~=4.62.2</span><br><span class="line">&gt;opencv-python~=4.5.5.62</span><br></pre></td></tr></table></figure>
+
+<p>在文件夹下执行以下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;python &#123;instant-ngp位置&#125;/scripts/colmap2nerf.py --colmap_matcher exhaustive --run_colmap --aabb_scale 16</span><br></pre></td></tr></table></figure>
+
+<p>这一步生成<code>transforms.json</code>文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;instant-ngp$ ./build/testbed --mode nerf --scene [path to training data folder containing transforms.json]</span><br></pre></td></tr></table></figure>
+
+<p>之后就可以<code>.\\build\\testbed.exe -s .\\data\\lego</code>运行了。</p>
+</blockquote>
+<h2 id="Colmap-遇到的问题"><a href="#Colmap-遇到的问题" class="headerlink" title="Colmap 遇到的问题"></a>Colmap 遇到的问题</h2><blockquote>
+<p>  使用步骤：</p>
+<p>  [1] file -&gt; new project</p>
+<p>  [2] processing -&gt; feature extract</p>
+<p>  [3] processing -&gt; feature match</p>
+<p>  [4] reconstruction -&gt; automantic</p>
+</blockquote>
+<h3 id="缺少cameras-txt"><a href="#缺少cameras-txt" class="headerlink" title="缺少cameras.txt"></a>缺少cameras.txt</h3><p><code>解决方案</code>： file -&gt; Export model as text </p>
+<p>会生成三个cameras.txt, images.txt, and points3D.txt.</p>
+<p><code>ref</code>: <a target="_blank" rel="noopener" href="https://colmap.github.io/format.html">文档</a></p>
+<h3 id="缺少各种dll"><a href="#缺少各种dll" class="headerlink" title="缺少各种dll"></a>缺少各种dll</h3><p>1找不到<code>glew32.dll</code></p>
+<p>2 缺少<code>boost_program_options-vc143-mt-x64-1_77.dll</code></p>
+<p>3 找不到<code>glog.dll</code></p>
+<p>2 缺少<code>boost_filesystem-vc143-mt-x64-1_77.dll</code></p>
+<p><code>解决方法</code>： 将<code>COLMAP-3.7-windows-cuda\bin</code> 和 <code>\COLMAP-3.7-windows-cuda\lib</code> 放入环境变量中</p>
+<p><code>为什么知道这样解决</code>： 看了<code>COLMAP.bat</code>文件</p>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><p><code>copy these files C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6\extras\visual_studio_integration\MSBuildExtensions</code> to here <code>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations</code></p>
+<p>1、 收集图片</p>
+<p>2、 <code>python [path-to-instant-ngp]/scripts/colmap2nerf.py --colmap_matcher exhaustive --run_colmap --aabb_scale 16</code></p>
+<p>3、<code>./build/testbed --mode nerf --SCENE [path to training data folder containing transforms.json]</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/06/01/Instant-ngp/" data-id="cl3vn53ma0000c4w0ftwkettp" data-title="Instant-ngp" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Instanct-ngp/" rel="tag">Instanct-ngp</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2022/05/24/page/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">page</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Instanct-ngp/" rel="tag">Instanct-ngp</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Instanct-ngp/" style="font-size: 10px;">Instanct-ngp</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/06/01/Instant-ngp/">Instant-ngp</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/24/page/">page</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/24/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 Caesar Xu<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
