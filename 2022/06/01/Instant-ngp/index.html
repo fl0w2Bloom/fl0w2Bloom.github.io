@@ -4,22 +4,22 @@
   <meta charset="utf-8">
   
   
-  <title>Instant-ngp | Hexo</title>
+  <title>Instant-ngp | XU&#39;s 学习小记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Instant-ngp 需要的环境  VS2019 or GCC&#x2F;G++ 7.5 or higher CUDA v10.2 or higher  CMake 3.21 or higher   编译12$ git clone --recursive https:&#x2F;&#x2F;github.com&#x2F;nvlabs&#x2F;instant-ngp$ cd instant-ngp  点击windows 输入dev">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Instant-ngp">
 <meta property="og:url" content="http://example.com/2022/06/01/Instant-ngp/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="XU&#39;s 学习小记">
 <meta property="og:description" content="Instant-ngp 需要的环境  VS2019 or GCC&#x2F;G++ 7.5 or higher CUDA v10.2 or higher  CMake 3.21 or higher   编译12$ git clone --recursive https:&#x2F;&#x2F;github.com&#x2F;nvlabs&#x2F;instant-ngp$ cd instant-ngp  点击windows 输入dev">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-06-01T13:37:23.000Z">
-<meta property="article:modified_time" content="2022-06-01T13:37:48.487Z">
+<meta property="article:modified_time" content="2022-06-02T06:06:13.144Z">
 <meta property="article:author" content="Caesar Xu">
 <meta property="article:tag" content="Instanct-ngp">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="XU's 学习小记" type="application/atom+xml">
   
   
     <link rel="shortcut icon" href="/favicon.png">
@@ -47,7 +47,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">XU&#39;s 学习小记</a>
       </h1>
       
     </div>
@@ -119,6 +119,12 @@
 <p>在文件夹下执行以下命令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;python &#123;instant-ngp位置&#125;/scripts/colmap2nerf.py --colmap_matcher exhaustive --run_colmap --aabb_scale 16</span><br></pre></td></tr></table></figure>
 
+<blockquote>
+<ul>
+<li>此处需要安装<a target="_blank" rel="noopener" href="https://github.com/colmap/colmap/releases">Colmap</a></li>
+<li>将<code>COLMAP-3.7-windows-cuda\bin</code>和<code>COLMAP-3.7-windows-cuda\lib</code>添加到系统变量<code>path</code> 中，否则会报错(下方缺少各种DLL文件)</li>
+</ul>
+</blockquote>
 <p>这一步生成<code>transforms.json</code>文件。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;instant-ngp$ ./build/testbed --mode nerf --scene [path to training data folder containing transforms.json]</span><br></pre></td></tr></table></figure>
 
@@ -148,7 +154,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/06/01/Instant-ngp/" data-id="cl3wdvbml00000ww0fjb24dc2" data-title="Instant-ngp" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/06/01/Instant-ngp/" data-id="cl3wm76yv0000vgw08skg7yj6" data-title="Instant-ngp" class="article-share-link">Share</a>
       
       
       
