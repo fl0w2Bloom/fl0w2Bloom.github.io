@@ -10,14 +10,12 @@
   <meta name="author" content="Caesar Xu">
   
   <meta name="description" content="Instant-ngp
-需要的环境
+论文个人理解名词理解
+  Neural graphics primitives : 通过神经网络将一些图片变成三位立体。升维
+  Multiresolution structure：disambiguate hash collisions。
 
-VS2019 or GCC&amp;#x2F;G++ 7.5 or higher
-CUDA v10.2 or higher 
-CMake 3.21 or higher
-
-
-编译12$ git clone --recursive https://github.com/nv">
+  1、adaptive 
+  ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -143,18 +141,40 @@ var _hmt = _hmt || [];
 	<div class="mypage">		
 	  		
 
-	  <p><a href="">Instant-ngp</a></p>
+	  <p><a target="_blank" rel="noopener" href="https://github.com/NVlabs/instant-ngp">Instant-ngp</a></p>
+<h2 id="论文个人理解"><a href="#论文个人理解" class="headerlink" title="论文个人理解"></a>论文个人理解</h2><h3 id="名词理解"><a href="#名词理解" class="headerlink" title="名词理解"></a>名词理解</h3><blockquote>
+<p>  <code>Neural graphics primitives</code> : 通过神经网络将一些图片变成三位立体。<code>升维</code></p>
+<p>  <code>Multiresolution structure</code>：disambiguate hash collisions。</p>
+<blockquote>
+<p>  1、adaptive </p>
+<p>  2、efficient</p>
+<p>  3、use 2 value configure multiresolution hash encoding</p>
+<blockquote>
+<p>  the number of parameters <code>T</code></p>
+<p>  the desired finest resolution $ N_{max}$W</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h3 id="指出的问题"><a href="#指出的问题" class="headerlink" title="指出的问题"></a>指出的问题</h3><blockquote>
+<p>1、fully connected neural networks are costly to train and evaluate.</p>
+</blockquote>
+<h3 id="问题的解决方案"><a href="#问题的解决方案" class="headerlink" title="问题的解决方案"></a>问题的解决方案</h3><blockquote>
+<p>  解决问题[1] : new input encoding that permits the use of a smaller network without sacrificing quality, thus significantly reducing the number of floating point and memory.</p>
+</blockquote>
+<h3 id="解决方案的具体介绍"><a href="#解决方案的具体介绍" class="headerlink" title="解决方案的具体介绍"></a>解决方案的具体介绍</h3><blockquote>
+<p>  解决问题[1]: a small neural network is augmented by a multiresolution hash table of trainable feature vectors whose values are optimized through stochastic gradient descent.</p>
+</blockquote>
 <h2 id="需要的环境"><a href="#需要的环境" class="headerlink" title="需要的环境"></a>需要的环境</h2><blockquote>
 <ul>
-<li>VS2019 or GCC&#x2F;G++ 7.5 or higher</li>
-<li>CUDA v10.2 or higher </li>
-<li>CMake 3.21 or higher</li>
+<li><code>VS2019</code> or <code>GCC/G++</code> 7.5 or higher</li>
+<li><code>CUDA</code> v10.2 or higher </li>
+<li><code>CMake</code> 3.21 or higher</li>
 </ul>
 </blockquote>
 <h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> --recursive https://github.com/nvlabs/instant-ngp</span><br><span class="line">$ <span class="built_in">cd</span> instant-ngp</span><br></pre></td></tr></table></figure>
 
 <p>点击windows 输入dev 选择<code>Developer Command Prompt for VS 2019</code>,输入以下命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">instant-ngp$ cmake . -B build</span><br><span class="line"></span><br><span class="line">instant-ngp$ cmake --build build --config RelWithDebInfo -j 16 </span><br><span class="line"><span class="comment"># 或者直接进build文件夹，用VS打开instant-ngp.sln文件</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 复制 `&#123;CUDA安装路径&#125;\extras\visual_studio_integration\MSBuildExtensions` 到 `&#123;Microsoft Visual Studio 2019 安装路径&#125; \MSBuild\Microsoft\VC\v160\BuildCustomizations`，否则执行命令会报错。</span></span><br><span class="line">instant-ngp$ cmake . -B build</span><br><span class="line"></span><br><span class="line">instant-ngp$ cmake --build build --config RelWithDebInfo -j 16 </span><br><span class="line"><span class="comment"># 或者直接进build文件夹，用VS打开instant-ngp.sln文件</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">instant-ngp$ ./build/testbed --SCENE data/nerf/fox</span><br></pre></td></tr></table></figure>
 
@@ -193,8 +213,7 @@ var _hmt = _hmt || [];
 <p>2 缺少<code>boost_filesystem-vc143-mt-x64-1_77.dll</code></p>
 <p><code>解决方法</code>： 将<code>COLMAP-3.7-windows-cuda\bin</code> 和 <code>\COLMAP-3.7-windows-cuda\lib</code> 放入环境变量中</p>
 <p><code>为什么知道这样解决</code>： 看了<code>COLMAP.bat</code>文件</p>
-<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><p><code>copy these files C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6\extras\visual_studio_integration\MSBuildExtensions</code> to here <code>C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\BuildCustomizations</code></p>
-<p>1、 收集图片</p>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><p>1、 收集图片</p>
 <p>2、 <code>python [path-to-instant-ngp]/scripts/colmap2nerf.py --colmap_matcher exhaustive --run_colmap --aabb_scale 16</code></p>
 <p>3、<code>./build/testbed --mode nerf --SCENE [path to training data folder containing transforms.json]</code></p>
 	  
