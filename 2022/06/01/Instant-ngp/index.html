@@ -10,12 +10,14 @@
   <meta name="author" content="Caesar Xu">
   
   <meta name="description" content="Instant-ngp
+
+
 论文个人理解名词理解
   Neural graphics primitives : 通过神经网络将一些图片变成三位立体。升维
   Multiresolution structure：disambiguate hash collisions。
 
   1、adaptive 
-  ">
+">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -142,6 +144,8 @@ var _hmt = _hmt || [];
 	  		
 
 	  <p><a target="_blank" rel="noopener" href="https://github.com/NVlabs/instant-ngp">Instant-ngp</a></p>
+<hr>
+<hr>
 <h2 id="论文个人理解"><a href="#论文个人理解" class="headerlink" title="论文个人理解"></a>论文个人理解</h2><h3 id="名词理解"><a href="#名词理解" class="headerlink" title="名词理解"></a>名词理解</h3><blockquote>
 <p>  <code>Neural graphics primitives</code> : 通过神经网络将一些图片变成三位立体。<code>升维</code></p>
 <p>  <code>Multiresolution structure</code>：disambiguate hash collisions。</p>
@@ -164,6 +168,8 @@ var _hmt = _hmt || [];
 <h3 id="解决方案的具体介绍"><a href="#解决方案的具体介绍" class="headerlink" title="解决方案的具体介绍"></a>解决方案的具体介绍</h3><blockquote>
 <p>  解决问题[1]: a small neural network is augmented by a multiresolution hash table of trainable feature vectors whose values are optimized through stochastic gradient descent.</p>
 </blockquote>
+<hr>
+<hr>
 <h2 id="需要的环境"><a href="#需要的环境" class="headerlink" title="需要的环境"></a>需要的环境</h2><blockquote>
 <ul>
 <li><code>VS2019</code> or <code>GCC/G++</code> 7.5 or higher</li>
@@ -197,6 +203,8 @@ var _hmt = _hmt || [];
 
 <p>之后就可以<code>.\\build\\testbed.exe -s .\\data\\lego</code>运行了。</p>
 </blockquote>
+<p>+++</p>
+<hr>
 <h2 id="Colmap-遇到的问题"><a href="#Colmap-遇到的问题" class="headerlink" title="Colmap 遇到的问题"></a>Colmap 遇到的问题</h2><blockquote>
 <p>  使用步骤：</p>
 <p>  [1] file -&gt; new project</p>
@@ -213,9 +221,6 @@ var _hmt = _hmt || [];
 <p>2 缺少<code>boost_filesystem-vc143-mt-x64-1_77.dll</code></p>
 <p><code>解决方法</code>： 将<code>COLMAP-3.7-windows-cuda\bin</code> 和 <code>\COLMAP-3.7-windows-cuda\lib</code> 放入环境变量中</p>
 <p><code>为什么知道这样解决</code>： 看了<code>COLMAP.bat</code>文件</p>
-<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><p>1、 收集图片</p>
-<p>2、 <code>python [path-to-instant-ngp]/scripts/colmap2nerf.py --colmap_matcher exhaustive --run_colmap --aabb_scale 16</code></p>
-<p>3、<code>./build/testbed --mode nerf --SCENE [path to training data folder containing transforms.json]</code></p>
 	  
 	</div>
 
