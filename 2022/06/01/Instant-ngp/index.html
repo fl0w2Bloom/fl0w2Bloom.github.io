@@ -12,12 +12,10 @@
   <meta name="description" content="Instant-ngp
 
 
-论文个人理解名词理解
+论文个人理解所有的level理解为resolution
+名词理解
   Neural graphics primitives : 通过神经网络将一些图片变成三位立体。升维
-  Multiresolution structure：disambiguate hash collisions。
-
-  1、adaptive 
-">
+  Multiresolution structure：disambiguate hash colli">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -146,7 +144,8 @@ var _hmt = _hmt || [];
 	  <p><a target="_blank" rel="noopener" href="https://github.com/NVlabs/instant-ngp">Instant-ngp</a></p>
 <hr>
 <hr>
-<h2 id="论文个人理解"><a href="#论文个人理解" class="headerlink" title="论文个人理解"></a>论文个人理解</h2><h3 id="名词理解"><a href="#名词理解" class="headerlink" title="名词理解"></a>名词理解</h3><blockquote>
+<h2 id="论文个人理解"><a href="#论文个人理解" class="headerlink" title="论文个人理解"></a>论文个人理解</h2><p>所有的<code>level</code>理解为<code>resolution</code></p>
+<h3 id="名词理解"><a href="#名词理解" class="headerlink" title="名词理解"></a>名词理解</h3><blockquote>
 <p>  <code>Neural graphics primitives</code> : 通过神经网络将一些图片变成三位立体。<code>升维</code></p>
 <p>  <code>Multiresolution structure</code>：disambiguate hash collisions。</p>
 <blockquote>
@@ -157,7 +156,15 @@ var _hmt = _hmt || [];
 <p>  the number of parameters <code>T</code></p>
 <p>  the desired finest resolution $ N_{max}$W</p>
 </blockquote>
+<p>  <code>Multiresolution </code> &#x3D; <code>coarse resolutions</code> + <code>fine resolutions,   </code></p>
 </blockquote>
+</blockquote>
+<h3 id="猜测"><a href="#猜测" class="headerlink" title="猜测"></a>猜测</h3><blockquote>
+<p>  <code>Number of feature dimensions per entry</code> $F &#x3D; 2$ 比较好的是因为平面点是2维的，2为即可与周围点建立联系。</p>
+</blockquote>
+<blockquote>
+<p>  <img src="/Instant-ngp.assets/instant_NGP.png" alt="架构"></p>
+<p>  <code>(4) concatenation</code>: 将<code>x</code>这个点各种信息都学习了，最精细层学习到与这个点最相关的数据，最粗糙层学习到与这个点只有一点关系的数据，通过等比数列得到中间层，就可以很好的学习<code>x</code>的信息。</p>
 </blockquote>
 <h3 id="指出的问题"><a href="#指出的问题" class="headerlink" title="指出的问题"></a>指出的问题</h3><blockquote>
 <p>1、fully connected neural networks are costly to train and evaluate.</p>
