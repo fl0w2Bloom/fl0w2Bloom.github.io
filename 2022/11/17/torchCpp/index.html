@@ -1,0 +1,270 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>torchCpp | XU&#39;s 学习小记</title>
+  <meta name="author" content="Caesar Xu">
+  
+  <meta name="description" content="VS 2022配置torch环境cuda 安装路径C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4\include
+torch路径D:\Code\libtorch
+torch下载及其解压选择那个都可以，我选择CUDA11.7,下载rel">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="torchCpp"/>
+  <meta property="og:site_name" content="XU&#39;s 学习小记"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-70812759-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?cb5448498d7169c668b07c2b255d62c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">XU&#39;s 学习小记</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class="fa fa-folder"></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class="fa fa-tags"></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class="fa fa-user"></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/atom.xml" title="Subscribe me.">
+			  <i class="fa fa-user"></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> torchCpp</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h1 id="VS-2022配置torch环境"><a href="#VS-2022配置torch环境" class="headerlink" title="VS 2022配置torch环境"></a>VS 2022配置torch环境</h1><p>cuda 安装路径<code>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4\include</code></p>
+<p>torch路径<code>D:\Code\libtorch</code></p>
+<h2 id="torch下载及其解压"><a href="#torch下载及其解压" class="headerlink" title="torch下载及其解压"></a>torch下载及其解压</h2><p>选择那个都可以，我选择CUDA11.7,下载release 版本，之后解压，此处我解压到D:\Code\libtorch</p>
+<p>**此处我已经将lib文件夹下的所有dll文件，放到了dll文件夹里 ** </p>
+<h2 id="VS新建工程及配置"><a href="#VS新建工程及配置" class="headerlink" title="VS新建工程及配置"></a>VS新建工程及配置</h2><p>1、对项目右键-&gt;属性-&gt;VC++目录-&gt;包含目录<code>D:\Code\libtorch\include</code></p>
+<p>根据自己安装目录决定</p>
+<p>2、对项目右键-&gt;属性-&gt;VC++目录-&gt;库目录<code>D:\Code\libtorch\lib</code></p>
+<p>3、连接器-&gt;输入-&gt;附加依赖项<code>D:\Code\libtorch\lib\*.lib</code></p>
+<p>*<em>注意 此处是 <em>.lib  有点</em></em></p>
+<p>打开刚才运行成功包含exe的文件夹，将<code>D:\Code\libtorch\lib</code>下所有的dll 文件复制到exe文件夹下。 </p>
+<h2 id="测试CUDA能否使用"><a href="#测试CUDA能否使用" class="headerlink" title="测试CUDA能否使用"></a>测试CUDA能否使用</h2><p>对项目右键-&gt;属性-&gt;VC++目录-&gt;包含目录<code>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.4\include</code></p>
+<h1 id="编写程序"><a href="#编写程序" class="headerlink" title="编写程序"></a>编写程序</h1><hr>
+<p>运行时需要将所有dll文件放到和exe同目录下。这块不是很熟，不知道则么搞可以方便使用</p>
+<hr>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;torch/csrc/autograd/function.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ATen/cuda/CUDAContext.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	at::Tensor a = at::<span class="built_in">ones</span>(&#123;<span class="number">2</span>, <span class="number">2</span>&#125;, at::<span class="built_in">requires_grad</span>());</span><br><span class="line">	at::Tensor b = at::<span class="built_in">ones</span>(&#123;<span class="number">2</span>, <span class="number">2</span>&#125;, at::<span class="built_in">requires_grad</span>());</span><br><span class="line">	at::Tensor c = a.<span class="built_in">add</span>(b);</span><br><span class="line">	std::cout &lt;&lt; c &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">	at::Device device&#123;at::Device::Type::CUDA, <span class="number">0</span>&#125;;</span><br><span class="line">	c10::TensorOptions cuda = at::<span class="built_in">device</span>(device);</span><br><span class="line">	std::cout &lt;&lt; <span class="string">&quot;cuda device is &quot;</span> &lt;&lt; cuda.<span class="built_in">device</span>() &lt;&lt; std::endl;</span><br><span class="line">	<span class="built_in">assert</span>(at::cuda::<span class="built_in">is_available</span>());</span><br><span class="line">	std::cout &lt;&lt; at::cuda::<span class="built_in">is_available</span>() &lt;&lt; std::endl;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+
+    
+    
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2022/07/12/Complex-YOLO/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2022-11-17 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/torch/">torch<span>1</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2022 Caesar Xu
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a>,<a target="_blank" rel="noopener" href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>,<a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a> and <a href="http://getbootstrap.com/" target="_blank">BOOTSTRA.386</a>. 
+     <br> Theme by <a target="_blank" rel="noopener" href="http://github.com/wzpan/hexo-theme-freemind/">Freemind.386</a>.    
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+</body>
+   </html>
